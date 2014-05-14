@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookmap PUBLIC "-//OASIS//DTD DITA BookMap//EN"
+ "/usr/local/DITA/dtd/bookmap/dtd/bookmap.dtd">
+<bookmap chunk="by-document">
+  <!-- <title>Clojure User&#x2019;s Guide</title> -->
+  <booktitle>
+    <booklibrary>The Clojure Documentation Library</booklibrary>
+    <mainbooktitle>The Clojure Translation Suite</mainbooktitle>
+    <!-- <booktitlealt>Analyzer Users Guide</booktitlealt> -->
+  </booktitle>
+
+  <bookmeta>
+    <authorinformation>
+      <personinfo>
+        <namedetails>
+          <personname>
+            <firstname>G.</firstname>
+            <lastname>Reynolds</lastname>
+          </personname>
+        </namedetails>
+      </personinfo>
+      <personinfo>
+        <namedetails>
+          <personname>
+            <firstname>Other</firstname>
+            <lastname>Contributors</lastname>
+          </personname>
+        </namedetails>
+      </personinfo>
+    </authorinformation>
+
+    <critdates>
+      <created date="2014-05-13" golive=""/>
+    </critdates>
+
+      <bookid>
+	<isbn></isbn>
+	<booknumber></booknumber>
+	<maintainer>
+	  <organization></organization>
+	  <person></person>
+	</maintainer>
+      </bookid>
+      <bookrights>
+	<copyrfirst><year>2014</year></copyrfirst>
+	<!-- <copyrlast><year>2014</year></copyrlast> -->
+	<bookowner>
+	  <person>Gregg Reynolds</person>
+	  <!-- <organization>Retro Tools, Inc.</organization> -->
+	</bookowner>
+    </bookrights>
+
+  </bookmeta>
+
+  <frontmatter chunk="to-content">
+    <!-- <booklists chunk="to-content"> -->
+    <!--   <figurelist chunk="to-content" copy-to="index.html"/>/> -->
+    <!--   <tablelist chunk="to-content" copy-to="index.html"/>/> -->
+    <!--   <toc chunk="to-content" copy-to="index.html"/> -->
+    <!-- </booklists> -->
+
+    <booklists>
+      <toc/>
+    </booklists>
+
+    <bookabstract chunk="to-content" href="topics/abstract.dita"/>
+    <notices chunk="to-content"
+	     href="topics/notices.dita">
+      <topicref chunk="to-content"
+		href="topics/trademarks.dita"></topicref>
+    </notices>
+    <preface navtitle="About This Document">
+      <!-- <topicref chunk="to-content" -->
+      <!-- 		href="topics/ug-preface.dita"></topicref> -->
+      <topicref chunk="to-content"
+		href="topics/planofwork.dita"></topicref>
+    </preface>
+  </frontmatter>
+
+  <!-- ################################################################ -->
+  <!-- <part chunk="to-content" navtitle="Overview"> -->
+    <chapter chunk="to-content"
+	     href="topics/overview.dita">
+    </chapter>
+
+    <chapter navtitle="What is tools.analyzer?"
+    		href="topics/whatis.dita">
+      <topicref chunk="to-content"
+    		href="topics/structndyn.dita">
+    	<topicref href="topics/projmap.dita">
+    	   <topicref href="topics/projmap-config.dita"/>
+    	   <topicref href="topics/projmap-profiles.dita"/>
+    	   <topicref href="topics/projmap-effective.dita"/>
+    	   <topicref href="topics/projmapsemantics.dita"/>
+    	 </topicref>
+    	 <topicref href="topics/commands.dita"/>
+    	 <topicref href="topics/leininfrastruct.dita"/>
+      </topicref>
+      <topicref href="topics/gettingstarted.dita">
+    	<topicref href="topics/install.dita"/>
+    	<topicref href="topics/tour.dita"/>
+    	<topicref href="topics/leininfrastruct.dita"/>
+      </topicref>
+    </chapter>
+
+  <!-- </part> -->
+
+  <!-- ################################################################ -->
+  <!-- <part chunk="to-content" navtitle="Clojure Concepts"> -->
+
+    <chapter navtitle="tools.analyzer" href="topics/tools.analyzer.dita"/>
+
+    <chapter navtitle="bindings" href="topics/bindings.dita">
+      <topicref chunk="to-content"   href="topics/bindings.overview.dita"/>
+      <topicref chunk="to-content"   href="topics/bindings.simple.dita"/>
+
+      <topicref chunk="to-content"   href="topics/bindings.structural.dita">
+    	<topicref href="topics/bindings.vectors.dita"/>
+    	<topicref href="topics/bindings.maps.dita"/>
+    	<topicref href="topics/bindings.nested.dita"/>
+      </topicref>
+    </chapter>
+
+    <!-- <chapter chunk="to-content" href="topics/silp.dita"> -->
+    <!-- </chapter> -->
+
+    <!-- <chapter chunk="to-content" href="topics/map-project.dita"> -->
+    <!--   <topicref href="topics/profiles.dita"> -->
+    <!-- 	<topicref href="topics/profiles-system.dita"/> -->
+    <!-- 	<topicref href="topics/profiles-user.dita"/> -->
+    <!--   </topicref> -->
+    <!-- </chapter> -->
+
+    <!-- <chapter chunk="to-content" href="topics/commands.dita"> -->
+    <!--   <topicref href="topics/commands-defaults.dita"/> -->
+    <!--   <topicref href="topics/plugins.dita"/> -->
+    <!-- </chapter> -->
+    <!-- <chapter chunk="to-content" -->
+    <!-- 	     href="topics/deps.dita"> -->
+    <!--   <topicref href="topics/deps-tree.dita"/> -->
+    <!--   <topicref href="topics/deps-ns.dita"/> -->
+    <!--   <topicref href="topics/classpath.dita"/> -->
+    <!-- </chapter> -->
+    <!-- <chapter chunk="to-content" href="topics/repos.dita"> -->
+    <!-- </chapter> -->
+
+    <!-- <chapter chunk="to-content" href="topics/templates.dita"> -->
+    <!-- </chapter> -->
+    <!-- <chapter chunk="to-content" href="topics/repl.dita"> -->
+    <!-- </chapter> -->
+    <!-- <chapter chunk="to-content" href="topics/trampolines.dita"> -->
+    <!-- </chapter> -->
+
+    <!-- <chapter chunk="to-content" href="topics/testing.dita"> -->
+    <!--   <topicref href="topics/testing-unit.dita"> -->
+    <!-- 	<topicref href="topics/testing-unit-concepts.dita"/> -->
+    <!-- 	<topicref href="topics/testing-unit-proc.dita"/> -->
+    <!--   </topicref> -->
+    <!--   <topicref href="topics/testing-system.dita"> -->
+    <!-- 	<topicref href="topics/testing-system-concepts.dita"/> -->
+    <!-- 	<topicref href="topics/testing-system-proc.dita"/> -->
+    <!--   </topicref> -->
+    <!--   <topicref href="topics/testing-ci.dita"> -->
+    <!-- 	<topicref href="topics/testing-ci-concepts.dita"/> -->
+    <!-- 	<topicref href="topics/testing-ci-proc.dita"/> -->
+    <!--   </topicref> -->
+    <!-- </chapter> -->
+
+    <!-- <chapter chunk="to-content" -->
+    <!-- 	     href="topics/deployment.dita"> -->
+      <!-- <topicref href="topics/config.dita"/> -->
+    <!-- </chapter> -->
+  <!-- </part> -->
+
+  <!-- ################################################################ -->
+  <part chunk="to-content" navtitle="Extending Clojure: Macros">
+    <chapter chunk="to-content"
+	     href="topics/dev-templates.dita">
+    </chapter>
+    <!-- <chapter chunk="to-content" -->
+    <!-- 	     href="topics/dev-plugins.dita"> -->
+    <!-- </chapter> -->
+    <!-- <chapter chunk="to-content" -->
+    <!-- 	     href="topics/dev-profiles.dita"> -->
+    <!-- </chapter> -->
+    <!-- <chapter chunk="to-content" -->
+    <!-- 	     href="topics/dev-embed.dita"> -->
+    <!-- </chapter> -->
+  </part>
+
+  <!-- ################################################################ -->
+  <!-- ################################################################ -->
+  <appendices chunk="to-content" toc="yes">
+    <topicmeta>
+      <navtitle>Appendices</navtitle>
+    </topicmeta>
+    <appendix chunk="to-content" href="topics/contrib.dita"/>
+  </appendices>
+
+  <backmatter>
+    <booklists>
+      <bibliolist/>
+      <indexlist chunk="to-content"/>
+    </booklists>
+  </backmatter>
+</bookmap>
