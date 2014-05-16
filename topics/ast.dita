@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN"
+"http://docs.oasis-open.org/dita/dtd/topic.dtd">
+<topic id="ast">
+  <title>Abstract Syntax Trees</title>
+
+  <body>
+    <p>
+      An <term>abstract syntax tree</term> is a hierarchical data
+      structure that represents the syntactic structure of a sentence
+      in a language (in this case, a program text).  Of course,
+      calling it "abstract" is an abuse of terminology; there is
+      nothing abstract about ASTs.  Some practitioners use the term
+      "Intermediate Representation" (IR), which is much more accurate.
+      ASTs are always concrete data structures; some systems also
+      define an associated grammar, so that the AST can be written out
+      in concrete form.  The term "abstract" was (presumably) adopted
+      because such structures may in many cases be used to represent
+      more than one "concrete" syntax.  For example, a translator that
+      maps code from one language to another might employ an AST as an
+      intermediary, translating first from source to IR, then from IR
+      to target, or vice-versa.  This is pretty much what happens when
+      you compile code, where the source code is in a language like C
+      and the target code is in the machine language of the target
+      platform.  So an AST (or IR grammar) serves as a kind of broker.
+    </p>
+
+    <p>
+      Anyway, the point of building an IR in the form of an AST is
+      that you can annotate the nodes of the tree with information
+      (e.g. the main node corresponding to a function definition might
+      include a "number-of-args" field), and then you can crawl around
+      the tree using standard tree operations to do various things,
+      such as pretty-print the source code.  In the case of a
+      compiler, aside from the task of translating from the IR to
+      machine code, we usually want to optimize the code, which
+      conceptually amounts to performing a series of transformations
+      ("passes").  Each pass might perform one optimization; for
+      example, a dead code elimination pass might look for nodes
+      representing definitions of variables that are never used, and
+      remove them from the IR.
+    </p>
+
+    <note type="attention">
+      Terminology varies.  LLVM calls the middle phase "optimization",
+      as to many other systems/writers, but optimization is just one
+      of the things you can do with an IR.  At the very least,
+      however, you're going to do <i>some</i> form of analysis, so
+      Clojure's choice to call this "analysis" is reasonable.
+      Incidentially, tools.analyzer seems to have followed the lead of
+      the [Clojure
+      compiler](https://github.com/clojure/clojure/blob/master/src/jvm/clojure/lang/Compiler.java)
+      in this terminology.
+    </note>
+
+    <p>
+      GCC is a famous example of the use of IR.  GCC stands for "GNU
+      Compiler Collection" (and not "GNU C Compiler", as one might
+      expect).  GCC is a system comprising a variety of "front-end"
+      language parsers (C, C++, Fortran, etc.), which construct a
+      common intermediate program representation, and a variety of
+      backend "emitters" which translate the intermediate
+      representation to the machine languages of various hardware
+      platforms.  A more recent example of the same strategy is
+      [LLVM](); the [LLVM
+      chapter](http://www.aosabook.org/en/llvm.html) of
+      [AOSA](http://www.aosabook.org/en/index.html) contains a brief
+      discusson of this sort of design and a nice illustration.
+    </p>
+
+    <p>
+      The <i>locus classicus</i> on compiler construction, of which
+      AST construction and manipulation is a major phase, is <xref
+      href="http://en.wikipedia.org/wiki/Compilers:_Principles,_Techniques,_and_Tools">Compilers:
+      Principles, Techniques, and Tools</xref>, by Alfred V. Aho,
+      Monica S. Lam, Ravi Sethi, and Jeffrey D. Ullman.  You can also
+      take a look at ...
+    </p>
+
+    <section>
+      <title>AST Node Design</title>
+      <p>
+	Obviously one of the critical design choices in any sort of
+	language processor that builds IR trees is exactly which data
+	structures should be used for the tree nodes.  In C, this will
+	usually involve a <codeph>struct</codeph> of type
+	<codeph>node</codeph> (for example), which will contain pointers
+	of the same type, so that a node can point to its parent,
+	siblings, and/or children.
+      </p>
+
+      <note type="remember">
+	TODO: a few brief remarks on the IR used by Clojure
+	internally, by way of contrast with the AST that
+	tools.analyzer builds.
+      </note>
+
+      <note type="remember">
+	TODO: a few brief remarks on pros and cons of various
+	strategies.
+      </note>
+
+    </section>
+
+    <section>
+      <title>The tools.analyzer AST</title>
+
+      <p>
+	tools.analyzer (hereinafter, TA), being a Clojure tool, does
+	the obvious thing: it uses Clojure data structures for its
+	ASTs.  Specifically, the whole thing is a map.
+      </p>
+
+      <p>
+	One nice thing about this is that you don't need to learn any
+	specialized AST API in order to crawl the tree; you use the
+	same functions you use for any other Clojure map.  All you
+	need to learn is the keywords and structure of the map.
+      </p>
+
+    </section>
+
+  </body>
+
+  <related-links>
+    <link href="http://en.wikipedia.org/wiki/Compilers:_Principles,_Techniques,_and_Tools">
+      <linktext>The Dragon Book</linktext>
+    </link>
+  </related-links>
+</topic>
