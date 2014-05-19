@@ -13,6 +13,7 @@ DITA documentation (eventually, maybe) for:
 
 With some remarks on related tools:
 
+* [sjacket](https://github.com/cgrand/sjacket) "Sjacket stated goal is to become a common backend for Clojure editors."
 * [instaparse](https://github.com/Engelberg/instaparse) Instaparse aims to be the simplest way to build parsers in Clojure.
 * [parsely](https://github.com/cgrand/parsley)  a DSL for creating total and truly incremental parsers in Clojure
 * [Parse-EZ](https://github.com/protoflex/parse-ez) Parse-EZ is a parser library for Clojure programmers. It allows easy mixing of declarative and imperative styles and does not require any special constructs, macros, monads, etc. to write custom parsers. All the parsing is implemented using regular Clojure functions.
